@@ -1237,7 +1237,6 @@ def main():
 
 if __name__ == '__main__':
 
-    check_update()
     OSNAME, EXE_NAME = download_driver()
     create_database()
     urls = load_url()
