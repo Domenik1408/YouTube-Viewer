@@ -65,7 +65,7 @@ Yb  dP  dP"Yb  88   88 888888 88   88 88""Yb 888888
 """ + bcolors.ENDC)
 
 
-SCRIPT_VERSION = '1.6.2'
+SCRIPT_VERSION = '1.0.0'
 
 proxy = None
 driver = None
@@ -155,17 +155,6 @@ class QueryError(Exception):
 def timestamp():
     date_fmt = datetime.now().strftime("%d-%b-%Y %H:%M:%S")
     return bcolors.OKGREEN + f'[{date_fmt}] '
-
-
-def check_update():
-    api_url = 'https://github.com/Domenik1408'
-    response = requests.get(api_url, timeout=30)
-
-    RELEASE_VERSION = response.json()['tag_name']
-
-    if SCRIPT_VERSION != RELEASE_VERSION:
-        print(bcolors.BOLD + 'Update Available!!! ' +
-              f'YouTube Viewer version {SCRIPT_VERSION} needs to update to {RELEASE_VERSION} version.' + bcolors.ENDC)
 
 
 def download_driver():
